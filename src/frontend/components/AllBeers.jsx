@@ -10,21 +10,17 @@ export const AllBeers = () => {
     function getAllBeerList() {
         axios({
             method: "GET",
-            url: "https://api.catalog.beer/beer",
-            headers: {
-                "accept": "application/json",
-                "Authorization": "Basic NTFjODNhNDctODEwOS00YTEyLTlkMjctNDM1MjA1YTEzZDgzOg==",
-                "Access-Control-Allow-Origin": "http://localhost:3000",
-                'Access-Control-Allow-Methods': 'GET',
-                'Access-Control-Allow-Headers': "get,has,keys,set,values,Authorization"
-            }
+            url: "/all_beers",
+           
         })
         .then((response) => {
+            // const res = res.json()
+            // const data = setAllBeerList(data.response.text)
             const res = JSON.stringify(response.data)
 
             setAllBeerList(({
-                id: res.id,
-                name: res.name
+                object: res.object,
+                names: res.data
             }))
         }).catch((error) => {
             if (error.response) {
@@ -38,13 +34,24 @@ export const AllBeers = () => {
             <div className="beerlist">
                 <p>BEER LIST</p>
                 <button onClick={getAllBeerList}>Get it</button>
-                <ul>
-                    {allBeerList.map((beer, index) => {
+                    <ul>
+                    {allBeerList.map((beerData, index) => {
                         return(
-                            <li key={index}>{beer.id}</li>
+                            <div>
+                            <h3>{beerData.object}</h3>
+                            { beerData.data.map((beer, i) => {
+                                return(
+                                    <li key={i}>{beer.id}, {beer.name}</li>
+                                )
+                            })}
+                            
+                            {/* <li key={index}>{beer.id}</li> */}
+                            
+                            </div>
                         )
                     })}
-                </ul>
+                    </ul>
+                
             </div>
         )
     };
