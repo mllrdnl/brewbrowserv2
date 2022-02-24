@@ -1,6 +1,12 @@
-from flask import Flask
+from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
+
 
 app = Flask(__name__)
+# CORS(app, resources={r"/api/*":{"origins":"http://127.0.0.1:5000/"}})
+app.config['CORS_HEADERS'] = "Content-Type"
+
+cors = CORS(app, resources={r'/api/*': {'origins': '*'}})
 
 #remember to put 2 empty lines between functions
 @app.route('/')
@@ -8,7 +14,23 @@ def hello_world():
     return ('Hello World!')
 
 
+@app.route('/super_simple')
+def super_simple():
+    return jsonify({"message": 'Super Simple'}), 200
 
+
+@app.route('/not_found')
+def not_found():
+    return jsonify({"message": "That resource was not found!"}), 404
+
+
+@app.route('/all_beers', methods=["GET"])
+@cross_origin()
+def get_all_beers():
+    url = 'https://api.catalog.beer/beer'
+    r = request.get(url, auth = ('username', '51c83a47-8109-4a12-9d27-435205a13d83'), headers={"accept": "application/json"})
+    response = r.json()
+    return jsonify(response["data"]), 200
 
 
 if __name__ == '__main__':
