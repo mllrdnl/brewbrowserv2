@@ -41,7 +41,6 @@ export const AllBeers = () => {
                                         <li key={i}>{indvBeer.id}, {indvBeer.name}</li>
                                     )
                                 } */}
-                                )
                                 {/* <li key={id}>{id}, {name}</li> */}
                                 </ul>
                             </div>
