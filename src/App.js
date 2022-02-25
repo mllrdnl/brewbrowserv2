@@ -11,7 +11,7 @@ function App() {
         <img src={beerfridgelogo} className="App-logo" alt="logo" />
 
         <h3>All Beers</h3>
-        <AllBeers/>
+        
         
 
         {/* <a
@@ -23,6 +23,11 @@ function App() {
           Learn React
         </a> */}
       </header>
+      <div className="allbeerslist">
+      <AllBeers/>
+      </div>
+        
+
     </div>
   );
 }

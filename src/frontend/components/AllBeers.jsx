@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export const AllBeers = () => {
-    
+
+    const [beerListObj, setBeerListObj] = useState({});
     const [allBeerList, setAllBeerList] = useState([]);
 
     // var axios = require('axios');
@@ -14,14 +15,13 @@ export const AllBeers = () => {
            
         })
         .then((response) => {
-            // const res = res.json()
-            // const data = setAllBeerList(data.response.text)
-            const res = JSON.stringify(response.data)
+            const res = response.data
 
-            setAllBeerList(({
-                object: res.object,
-                names: res.data
-            }))
+            const data = res.data    
+            
+            setAllBeerList(data.data)
+
+
         }).catch((error) => {
             if (error.response) {
               console.log(error.response)
@@ -30,30 +30,30 @@ export const AllBeers = () => {
               }
           })}
 
+
+
         return(
             <div className="beerlist">
                 <p>BEER LIST</p>
                 <button onClick={getAllBeerList}>Get it</button>
                     <ul>
-                    {allBeerList.map((beerData, index) => {
+                    {allBeerList.map((beer, index) => {
                         return(
                             <div>
-                            <h3>{beerData.object}</h3>
-                            { beerData.data.map((beer, i) => {
-                                return(
-                                    <li key={i}>{beer.id}, {beer.name}</li>
-                                )
-                            })}
-                            
-                            {/* <li key={index}>{beer.id}</li> */}
-                            
+                                <h3>BEER</h3>
+                                <li key={index}>{beer.id}, {beer.name}</li>
                             </div>
                         )
                     })}
+                  
                     </ul>
-                
+            
             </div>
-        )
+            
+            )
+            
+        
     };
+
     
 
