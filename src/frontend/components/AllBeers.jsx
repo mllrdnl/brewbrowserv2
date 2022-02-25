@@ -15,47 +15,41 @@ export const AllBeers = () => {
             .catch(err => console.error(err))
         
     }, []);
-        // axios({
-        //     method: "GET",
-        //     url: "/all_beers",
         
-        // })
-        // .then((response) => {
-        //     const res = response.data
-
-        //     const data = res.data    
-            
-        //     setAllBeerList(data.data)
-
-
-        // }).catch((error) => {
-        //     if (error.response) {
-        //     console.log(error.response)
-        //     console.log(error.response.status)
-        //     console.log(error.response.headers)
-        //     }
-        // })}
     console.log(Object.entries(allBeerList))
 
     if (loading) {
         return <p>Data is loading...</p>
     }
+
+    // const beerArray = allBeerList.map(((data) => {
+    //     return beerDetails
+    // }))
     
     return(
             <div className="beerlist">
                 <p>BEER LIST</p>
-                {/* <button onClick={getAllBeerList}>Get it</button> */}
-                    <ul>
-                    {/* {allBeerList.map(({id, name }) => {
-                        
+               
+                   <h3>BEER</h3>
+                    {allBeerList.map((beer, index) => {
+                        return(
                             <div>
-                                <h3>BEER</h3>
-                                <li key={id}>{id}, {name}</li>
+                                <ul>
+                                <li key={index}>{beer.id}, {beer.name}</li>
+                                {/* {allBeerList.beer.map((indvBeer, i) => {
+                                    return(
+                                        <li key={i}>{indvBeer.id}, {indvBeer.name}</li>
+                                    )
+                                } */}
+                                )
+                                {/* <li key={id}>{id}, {name}</li> */}
+                                </ul>
                             </div>
+                        )
                         
-                    })} */}
+                    })
                   
-                    </ul>
+                    }
             
             </div>
             

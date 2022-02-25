@@ -39,13 +39,7 @@ def get_all_beers():
     response.json()
 
     # print(response.text)
-    return jsonify(response.text)
-
-
-    # url = 'https://api.catalog.beer/beer'
-    # r = request.get(url, auth = ('username', '51c83a47-8109-4a12-9d27-435205a13d83'), headers={"accept": "application/json"})
-    # response = r.json()
-    # return jsonify(response["data"]), 200
+    return jsonify(response.json())
 
 
 if __name__ == '__main__':
