@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 import requests
 import json
+from models import db, User, Beer, BeerDetails
 
 
 app = Flask(__name__)
@@ -40,6 +41,23 @@ def get_all_beers():
 
     # print(response.text)
     return jsonify(response.json())
+
+
+@app.route('/all_beers_list', methods=["POST"])
+def save_beers():
+    content = request.get_json(silent=True)
+    beer_id = content["id"]
+    r = requests.get_json(beer_id)
+    response = r.json()
+
+    beer = Beer(id = response["id"], name = response["name"])
+
+    db.session.add(beer)
+    db.session.commit()
+
+    return jsonify(beer.serialize()), 200
+
+
 
 
 if __name__ == '__main__':

@@ -36,7 +36,7 @@ class Beer(db.Model):
 
 class BeerDetails(db.Model):
     id = db.Column(db.String(100), primary_key=True)
-    object = db.Column(db.String(80), unique=False, nullable=False)
+    obj = db.Column(db.String(80), unique=False, nullable=False)
     name = db.Column(db.String(200), unique=False, nullable=False)
     style = db.Column(db.String(120), unique=False, nullable=False)
     description = db.Column(db.String(300), unique=False, nullable=True)
@@ -44,7 +44,7 @@ class BeerDetails(db.Model):
     ibu = db.Column(db.Integer, unique=False, nullable=True)
     cb_verified = db.Column(db.Boolean, unique=False, nullable=True)
     brewer_verified = db.Column(db.Boolean, unique=False, nullable=True)
-    brewer = db.Column(db.Object, unique=False, nullable=True)
+    brewer = db.Column(db.String(80), unique=False, nullable=True)
 
     def __repr__(self):
         return '<beerdetails %r>' % self.id
