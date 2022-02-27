@@ -3,11 +3,10 @@ from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
-# from flask_swagger import swagger
 from flask_cors import CORS, cross_origin
 import requests
 import json
-from api.models import db, User, Beer, BeerDetails
+
 
 ENV = os.getenv("FLASK_ENV")
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
@@ -22,6 +21,8 @@ MIGRATE = Migrate(app, db)
 db.init_app(app)
 
 cors = CORS(app, resources={r'/api/*': {'origins': '*'}})
+
+from api.models import db, User, Beer, BeerDetails
 
 #remember to put 2 empty lines between functions
 #cut routes from here and moved them to api/routes
@@ -41,5 +42,5 @@ cors = CORS(app, resources={r'/api/*': {'origins': '*'}})
 
 #     return jsonify(beer.serialize()), 200
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()

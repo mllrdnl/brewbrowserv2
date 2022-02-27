@@ -1,13 +1,20 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 import requests
 import json
 from models import db, User, Beer, BeerDetails
 from app import app
 from flask_cors import CORS, cross_origin
 
-@app.route('/')
-def hello_world():
-    return ('Hello World!')
+
+routes = Blueprint('routes', __name__)
+
+@routes.route('/')
+def home():
+    return "<h1>Test</h1>"
+
+# @app.route('/')
+# def hello_world():
+#     return ('Hello World!')
 
 
 @app.route('/super_simple')
