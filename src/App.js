@@ -10,18 +10,20 @@ function App() {
       <header className="App-header">
         <img src={beerfridgelogo} className="App-logo" alt="logo" />
 
+        <div className="beerfridge">
+          <div className="beercans">
+          <div className="ipa">
+
+          </div>
+          <div className="paleale"></div>
+          <div className="lager"></div>
+          </div>
+          
+        </div>
+
         <h3>All Beers</h3>
         
         
-
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          
-        >
-          Learn React
-        </a> */}
       </header>
       <div className="allbeerslist">
       <AllBeers/>
