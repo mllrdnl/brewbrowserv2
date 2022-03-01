@@ -50,27 +50,35 @@
 }
 .beercans {
   display: flex;
+  width: 800px;
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  padding-top: 110px;
+  
 }
 
 .ipa {
-  height: 400px;
-  width: 400px;
-  background-image: url('IPACan.PNG');
+  height: 180px;
+  width: 110px;
+  background-image: url('IPACan.png');
+  margin-left: 20px;
+  transition: 1s;
   
  
 }
 
 .paleale {
-  height: 400px;
-  width: 400px;
-  background-image: url('PaleAleCan.PNG');
+  height: 180px;
+  width: 110px;
+  background-image: url('PaleAleCan.png');
   
 }
 
 .lager {
-  height: 400px;
-  width: 400px;
-  background-image: url('LagerCan.PNG');
+  height: 180px;
+  width: 110px;
+  background-image: url('LagerCan.png');
+  margin-right: 10px;
 
 }
