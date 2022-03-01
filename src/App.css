@@ -63,9 +63,7 @@
   width: 110px;
   background-image: url('IPACan.png');
   margin-left: 20px;
-  transition: 1s;
-  
- 
+
 }
 
 .paleale {
@@ -82,3 +80,43 @@
   margin-right: 10px;
 
 }
+
+.beercans:hover .ipa {
+  animation: left-to-right 2s ease-in forwards;
+}
+
+.beercans:hover .paleale {
+  animation: left-to-right 2s ease-in forwards;
+}
+
+.beercans:hover .lager {
+  animation: right-to-left 2s ease-in forwards;
+}
+
+@keyframes left-to-right {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  33% {
+    transform: translateX(-200%) translateY(-50%);
+  }
+
+  66% {
+    transform: translateX(-200%) translateY(10%);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+
+
+
