@@ -51,10 +51,24 @@
 .beercans {
   display: flex;
   width: 800px;
+  height: 300px;
   margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  padding-top: 110px;
+  flex-direction: row;
+  /* justify-content: center; */ 
+  /* padding-top: 110px; */
+  
+  
+}
+
+.blankcan_one {
+  height: 180px;
+  width: 110px;
+  background-image: url('BlankCan.png');
+  position: relative;
+  top: 110px;
+  left: 240px;
+  /* animation: bcone 3000ms linear ;
+  animation-iteration-count: 3; */
   
 }
 
@@ -62,8 +76,25 @@
   height: 180px;
   width: 110px;
   background-image: url('IPACan.png');
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  position: relative;
+  top: 110px;
+  left: 240px;
+  animation: ipaani 4000ms ease-in-out;
+  animation-iteration-count: 3;
 
+}
+
+.blankcan_two {
+  height: 180px;
+  width: 110px;
+  background-image: url('BlankCan.png');
+  position: relative;
+  top: 110px;
+  left: 240px;
+  /* animation: bctwo 3000ms linear;
+  animation-iteration-count: 3; */
+  
 }
 
 .paleale {
@@ -85,6 +116,14 @@
   animation: left-to-right 2s ease-in forwards;
 }
 
+.beercans:hover .blankcan_one {
+  animation: l-t-r 2s ease-in forwards;
+}
+
+.beercans:hover .blankcan_two {
+  animation: right-to-left 2s ease-in forwards;
+}
+
 .beercans:hover .paleale {
   animation: left-to-right 2s ease-in forwards;
 }
@@ -93,28 +132,99 @@
   animation: right-to-left 2s ease-in forwards;
 }
 
+@keyframes bcone {
+  0% {
+    transform: translateX(-25%);
+    opacity: 0;
+
+  }
+  50% {
+    opacity: 1;
+
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes bctwo {
+  0% {
+    transform: translateX(-25%);
+    opacity: 0;
+
+  }
+  50% {
+    opacity: 1;
+
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes ipaani {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: .25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: .25;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes left-to-right {
   100% {
     transform: translateX(100%);
   }
 }
 
-@keyframes right-to-left {
+@keyframes l-t-r {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes end-to-begin {
   0% {
-    transform: translateY(-50%);
+    transform: translateY(-50%)
   }
-
   33% {
-    transform: translateX(-200%) translateY(-50%);
+    transform: translateX(-200%);
   }
-
   66% {
     transform: translateX(-200%) translateY(10%);
   }
-
   100% {
     transform: translateX(-200%);
   }
+}
+
+@keyframes right-to-left {
+0% {
+  transform: translateX(25%);
+}
+25% {
+  transform: translateY(-25%);
+}
+50% {
+  transform: translateX(-200%);
+}
+75% {
+  
+}
+
 }
 
 

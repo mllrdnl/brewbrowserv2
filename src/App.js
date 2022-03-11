@@ -8,14 +8,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={beerfridgelogo} className="App-logo" alt="logo" />
+        {/* <img src={beerfridgelogo} className="App-logo" alt="logo" /> */}
 
         <div className="beerfridge">
+          
           <div className="beercans">
-          <div className="ipa">
-
-          </div>
-          <div className="paleale"></div>
+            <div className="blankcan_one"></div>
+            <div className="ipa"></div>
+            <div className="blankcan_two"></div>
+          <div className="paleale"></div> 
           <div className="lager"></div>
           </div>
           
