@@ -10,6 +10,8 @@ function App() {
       <header className="App-header">
         {/* <img src={beerfridgelogo} className="App-logo" alt="logo" /> */}
 
+        <div className="bb_logo"></div>
+
         <div className="beerfridge">
           
           <div className="beercans">
@@ -25,14 +27,16 @@ function App() {
           </div>
           
         </div>
+        <div className="coming_soon">Coming Soon</div>
 
-        <h3>All Beers</h3>
+        {/* <h3>All Beers</h3> */}
         
         
       </header>
-      <div className="allbeerslist">
+
+      {/* <div className="allbeerslist">
       <AllBeers/>
-      </div>
+      </div> */}
         
 
     </div>
