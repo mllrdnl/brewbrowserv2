@@ -13,9 +13,13 @@ function App() {
         <div className="beerfridge">
           
           <div className="beercans">
+          <div className="blankcan_four"></div>
             <div className="blankcan_one"></div>
-            <div className="ipa"></div>
+            
             <div className="blankcan_two"></div>
+            <div className="blankcan_three"></div>
+            
+            <div className="ipa"></div>
           <div className="paleale"></div> 
           <div className="lager"></div>
           </div>

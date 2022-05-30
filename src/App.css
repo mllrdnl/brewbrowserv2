@@ -52,7 +52,8 @@
   display: flex;
   width: 800px;
   height: 300px;
-  margin-top: 30px;
+  margin-top: 145px;
+  margin-left: 130px;
   flex-direction: row;
   /* justify-content: center; */ 
   /* padding-top: 110px; */
@@ -60,48 +61,77 @@
   
 }
 
+/* .ipa {
+  height: 180px;
+  width: 110px;
+  background-image: url('IPACan.png');
+  margin-left: 20px;
+  position: relative;
+  top: 110px;
+  left: 20px;
+  opacity: 1;
+  animation: ipaani 3000ms linear;
+  animation-iteration-count: 1;
+  animation-delay: 1000ms;
+
+} */
+
 .blankcan_one {
   height: 180px;
   width: 110px;
   background-image: url('BlankCan.png');
-  position: relative;
+  /* position: relative; */
   top: 110px;
   left: 240px;
-  /* animation: bcone 3000ms linear ;
-  animation-iteration-count: 3; */
+  animation: shiftbcone 5000ms linear 3 forwards;
   
-}
-
-.ipa {
-  height: 180px;
-  width: 110px;
-  background-image: url('IPACan.png');
-  /* margin-left: 20px; */
-  position: relative;
-  top: 110px;
-  left: 240px;
-  animation: ipaani 4000ms ease-in-out;
-  animation-iteration-count: 3;
-
+  
 }
 
 .blankcan_two {
   height: 180px;
   width: 110px;
   background-image: url('BlankCan.png');
-  position: relative;
+  /* position: relative; */
   top: 110px;
-  left: 240px;
-  /* animation: bctwo 3000ms linear;
-  animation-iteration-count: 3; */
+  left: 20px;
+  animation: shiftbctwo 5000ms linear 3 forwards;
   
 }
 
-.paleale {
+.blankcan_three {
+  height: 180px;
+  width: 110px;
+  background-image: url('BlankCan.png');
+  /* position: relative; */
+  top: 110px;
+  left: 240px;
+  animation: shiftbcthree 5000ms linear 3 forwards;
+
+}
+
+.blankcan_four {
+  height: 180px;
+  width: 110px;
+  background-image: url('BlankCan.png');
+  /* position: relative; */
+  top: 110px;
+  left: 0px;
+  animation: shiftbcfour 5000ms linear 3 forwards;
+
+}
+
+/* .paleale {
   height: 180px;
   width: 110px;
   background-image: url('PaleAleCan.png');
-  
+  position: relative;
+  top: 110px;
+  left: 22px;
+  animation: ipaani 4000ms ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 4000ms;
+
 }
 
 .lager {
@@ -109,10 +139,19 @@
   width: 110px;
   background-image: url('LagerCan.png');
   margin-right: 10px;
+  position: relative;
+  top: 110px;
+  right: 85px;
+  animation: ipaani 4000ms ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 8000ms;
+  
 
-}
+} */
 
-.beercans:hover .ipa {
+/*Original hover code*/
+
+/* .beercans:hover .ipa {
   animation: left-to-right 2s ease-in forwards;
 }
 
@@ -130,20 +169,89 @@
 
 .beercans:hover .lager {
   animation: right-to-left 2s ease-in forwards;
+} */
+
+/* .blankcan_one{
+  animation: shiftbcone 2s ease-in forwards;
+} */
+
+@keyframes shiftbcone {
+  0% {
+    transform: translateX(0%)
+  }
+  25% {
+    transform: translateX(25%)
+  }
+  50% {
+    transform: translateX(50%)
+  }
+  100% {
+    transform: translateX(100%);
+    background-image: url('IPACan.png');
+  }
 }
 
-@keyframes bcone {
+/* .blankcan_two{
+  animation: shiftbctwo 2s ease-in forwards;
+} */
+
+@keyframes shiftbctwo {
+  from {
+    transform: translateX(0%)
+  }
+  to {
+    transform: translateX(100%) 
+  }
+}
+
+/* .blankcan_three{
+  animation: shiftbcthree 2s ease-in forwards;
+} */
+
+@keyframes shiftbcthree {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(75%);
+    opacity: 0;
+  }
+
+}
+
+/* .blankcan_four{
+  animation: shiftbcfour 2s ease-in forwards;
+} */
+
+@keyframes shiftbcfour {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+
+}
+
+/* @keyframes bcone {
   0% {
     transform: translateX(-25%);
     opacity: 0;
-
+  }
+  25% {
+    opacity: .50;
   }
   50% {
     opacity: 1;
-
+  }
+  75% {
+    opacity: .25;
   }
   100% {
-    transform: translateX(50%);
+    transform: translateX(75%);
     opacity: 0;
   }
 }
@@ -163,6 +271,7 @@
     opacity: 0;
   }
 }
+*/
 
 @keyframes ipaani {
   0% {
@@ -171,18 +280,16 @@
   25% {
     opacity: .25;
   }
-
   50% {
     opacity: 1;
   }
   75% {
-    opacity: .25;
+    opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
-}
+} 
 
 @keyframes left-to-right {
   100% {
