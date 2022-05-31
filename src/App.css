@@ -41,8 +41,7 @@ body {
 }
 
 .coming_soon {
-  width: 100vw;
-  /* height: 140px; */
+  width: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,8 +52,8 @@ body {
   font-family: 'Rubik Puddles', cursive;
   font-size: 4rem;
   color: white;
-  width: 100%;
-  margin: 20px auto;
+  width: 80%;
+  margin: auto;
 }
 
 .App-link {
@@ -93,6 +92,7 @@ body {
 .beercans {
   display: flex;
   width: 420px;
+  
   height: 300px;
   margin-top: 145px;
   margin-left: 140px;

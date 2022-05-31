@@ -42,8 +42,8 @@ function App() {
       {/* <div className="allbeerslist">
       <AllBeers/>
       </div> */}
-        </div>
-        </body>
+    </div>
+    </body>
     </div>
   );
 }
