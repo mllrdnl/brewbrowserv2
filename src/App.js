@@ -9,36 +9,41 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <img src={beerfridgelogo} className="App-logo" alt="logo" /> */}
+        </header>
+        <body>
+        <div className="bodcontainer">
+          <div className="bb_logo"></div>
 
-        <div className="bb_logo"></div>
-
-        <div className="beerfridge">
+          <div className="beerfridge">
           
-          <div className="beercans">
-          <div className="blankcan_four"></div>
-            <div className="blankcan_one"></div>
+            <div className="beercans">
+              <div className="blankcan_four"></div>
+              <div className="blankcan_one"></div>
+              <div className="blankcan_two"></div>
+              <div className="blankcan_three"></div>
             
-            <div className="blankcan_two"></div>
-            <div className="blankcan_three"></div>
-            
-            <div className="ipa"></div>
-          <div className="paleale"></div> 
-          <div className="lager"></div>
+              <div className="ipa"></div>
+              <div className="paleale"></div> 
+              <div className="lager"></div>
+            </div>
           </div>
-          
+
+        <div className="coming_soon">
+          <div className="cstextbox">
+            <h3>Coming Soon</h3>
+          </div>
         </div>
-        <div className="coming_soon">Coming Soon</div>
 
         {/* <h3>All Beers</h3> */}
         
         
-      </header>
+      
 
       {/* <div className="allbeerslist">
       <AllBeers/>
       </div> */}
-        
-
+        </div>
+        </body>
     </div>
   );
 }
