@@ -10,11 +10,6 @@
   pointer-events: none;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 
 .App-header {
   background-color: #282c34;
@@ -106,7 +101,6 @@ body {
   height: 180px;
   width: 110px;
   background-image: url('BlankCan.png');
-  /* position: relative; */
   top: 110px;
   left: 240px;
   margin-right: 5px;
