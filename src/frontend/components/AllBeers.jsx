@@ -36,12 +36,7 @@ export const AllBeers = () => {
                             <div>
                                 <ul>
                                 <li key={index}>{beer.id}, {beer.name}</li>
-                                {/* {allBeerList.beer.map((indvBeer, i) => {
-                                    return(
-                                        <li key={i}>{indvBeer.id}, {indvBeer.name}</li>
-                                    )
-                                } */}
-                                {/* <li key={id}>{id}, {name}</li> */}
+                               
                                 </ul>
                             </div>
                         )

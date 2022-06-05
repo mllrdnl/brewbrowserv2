@@ -34,15 +34,12 @@ function App() {
           </div>
         </div>
 
-        {/* <h3>All Beers</h3> */}
+        <h3>All Beers</h3>
+        <div className="allbeerslist">
+          <AllBeers/>
+        </div>
         
-        
-      
-
-      {/* <div className="allbeerslist">
-      <AllBeers/>
-      </div> */}
-    </div>
+      </div>
     </body>
     </div>
   );
