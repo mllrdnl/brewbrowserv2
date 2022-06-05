@@ -1,28 +1,47 @@
-import os
-from flask import Flask, jsonify, request
-from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
-from flask_migrate import Migrate
-from flask_cors import CORS, cross_origin
-import requests
-import json
+# from flask import Flask
+
+# app = Flask(__name__)
+
+# @app.route('/')
+# def hello_world():
+#     return "<h3>Hello World<h3>"
 
 
-ENV = os.getenv("FLASK_ENV")
-static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
+# @app.route('/members')
+# def members():
+#     return {"members": ["Member1", "Member2", "Member3"]}
 
-app = Flask(__name__)
-ma = Marshmallow(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/test.db"
-app.config['CORS_HEADERS'] = "Content-Type"
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-MIGRATE = Migrate(app, db)
-db.init_app(app)
 
-cors = CORS(app, resources={r'/api/*': {'origins': '*'}})
 
-from api.models import db, User, Beer, BeerDetails
+
+# import os
+# from flask import Flask, jsonify, request
+# from flask_sqlalchemy import SQLAlchemy
+# from flask_marshmallow import Marshmallow
+# from flask_migrate import Migrate
+# from flask_cors import CORS, cross_origin
+# import requests
+# import json
+
+
+# ENV = os.getenv("FLASK_ENV")
+# static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
+
+# app = Flask(__name__)
+# ma = Marshmallow(app)
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/test.db"
+# app.config['CORS_HEADERS'] = "Content-Type"
+
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# MIGRATE = Migrate(app, db)
+# db.init_app(app)
+
+# cors = CORS(app, resources={r'/api/*': {'origins': '*'}})
+
+# from api.models import db, User, Beer, BeerDetails
 
 #remember to put 2 empty lines between functions
 #cut routes from here and moved them to api/routes
